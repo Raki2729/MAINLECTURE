@@ -6,7 +6,7 @@ startup.get('/',(req,res)=>{
 })
 
 startup.get('/alive',(req,res)=>{
-    res.send('HTTPS-Web-Service is Alive')
+    res.send('HTTPS-Web-Service is Working')
 })
 // commomjs format
 module.exports = startup
