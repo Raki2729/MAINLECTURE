@@ -1,8 +1,9 @@
 const express = require('express')
 const https = require('https')
 const fs = require('fs')
-const startup = require('./routes/startup');
-
+const startup = require('./routes/startup')
+const studentInfo = require('./routes/studentInfo');
+const location = require('./routes/location')
 
 const app = express()
 
@@ -18,6 +19,8 @@ const httpOptions = {
 const server = https.createServer(httpOptions,app)
 app.use(express.json())
 app.use('/https-web-service/v1', startup)
+app.use('/https-web-service/v1', studentInfo)
+app.use('/https-web-service/v1', location)
 
 
 //app.use('/https-web-service', startup)
